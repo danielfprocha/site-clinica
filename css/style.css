@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Beauty Handwriting';
+    src: url(../fonts/BeautyHandwriting-Regular.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cormorant+SC:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root {
+    --cor-principal: #d4557f;
+    --cor-fundo-site: #faf7f5;
+    --cor-fundo-primario: #f2e9e8;
+    --cor-fundo-alternativo: #f4ede8;
+    --cor-texto-suave: #635f5e;
+    --cor-texto-forte: #171717;
+    --cor-hover: #3a3534;
+    --cor-active: #000;
+    --cor-div-hover: #f2e9e83f;
+    --cor-borda: #f2c1b6;
+    --cor-whatsapp: #25D366;
+    --cor-texto-whatsapp: #fff;
+
+    --fonte-arte: 'Beauty Handwriting', Times, serif;
+    --fonte-titulo: 'Cormorant Garamond', Georgia, serif;
+    --fonte-texto: 'DM Sans', Arial, sans-serif;
+
+    --sombra: 0 2px 16px rgba(44, 36, 22, 0.08);
+    --sombra-whatsapp: 0 4px 20px rgba(13, 212, 86, 0.35);
+
+    --borda-p: 7px;
+    --borda-m: 15px;
+    --borda-g: 25px;
+}
+
+
