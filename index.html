@@ -66,24 +66,24 @@
 </head>
 <body>
     <!-- Botão whatsapp fixo -->
-    <a class="whatsapp-float" href="https://wa.me/5531912345678?text=Olá%2C%20vim%20pelo%20site!" target="_blank" rel="noopener noreferrer" aria-label="Mandar mensagem pelo WhatsApp">
+    <a id="whatsapp-float" class="whatsapp" href="https://wa.me/5531912345678?text=Olá%2C%20vim%20pelo%20site!" target="_blank" rel="noopener noreferrer" aria-label="Mandar mensagem pelo WhatsApp">
         <img src="images/geral/icone-whatsapp.png" alt="WhatsApp" width="32" height="32">
         Falar no WhatsApp
     </a>
 
     <!-- Navegação fixa -->
     <nav>
-        <span><a href="#">Espaço Beleza Buritis</a></span>
-        <a href="#sobre" id="historia" class="link-nav">Nossa História</a>
-        <a href="#servicos" class="link-nav">Procedimentos</a>
-        <a href="#localizacao" class="link-nav">Onde Estamos</a>
+        <a href="#">Espaço Beleza <span>Buritis</span></a>
+        <a href="#sobre" id="historia" class="nav-link">Nossa História</a>
+        <a href="#servicos" class="nav-link">Procedimentos</a>
+        <a href="#localizacao" class="nav-link">Onde Estamos</a>
     </nav>
 
     <!-- 1. Hero -->
     <header>
         <h1>Clínica Estética no Buritis, Belo Horizonte</h1>
         <img src="images/geral/logo-clinica.png" alt="Logo da clínica Espaço Beleza Buritis" width="1050" height="700">
-        <a class="header-whatsapp" href="https://wa.me/5531912345678?text=Olá%2C%20vim%20pelo%20site!" target="_blank" rel="noopener noreferrer">
+        <a id="whatsapp-header" class="whatsapp" href="https://wa.me/5531912345678?text=Olá%2C%20vim%20pelo%20site!" target="_blank" rel="noopener noreferrer">
             <img src="images/geral/icone-whatsapp.png" alt="Ícone Whatsapp" width="20" height="20">
             Fale conosco pelo WhatsApp
         </a>
@@ -91,7 +91,7 @@
 
     <main>
         <!-- 2. Sobre nós -->
-        <section id="sobre">
+        <section id="sec-sobre">
             <h2>Sobre Nós</h2>
             <p>Há mais de 15 anos costurando histórias no coração do Buritis, o Ateliê Buritis nasceu do amor pela costura fina e pelo cuidado com cada detalhe. Atendemos moradores do bairro e de toda a região de Belo Horizonte, devolvendo vida a roupas queridas, ajustando peças especiais e transformando o que parecia sem conserto em algo melhor do que o original. Trabalhamos com dedicação artesanal, prazo honesto e aquele atendimento de bairro que todo mundo merece — onde você é chamado pelo nome e sua roupa é tratada com respeito.</p>
 
@@ -103,7 +103,7 @@
         </section>
 
         <!-- 3. Procedimentos -->
-        <section id="procedimentos">
+        <section id="sec-procedimentos">
             <div id="procedimentos-box">
                 <h2>Procedimentos</h2>
                 <div id="procedimentos-grid">
@@ -191,7 +191,7 @@
         </section>
 
         <!-- 4. Localização + Horários + Contato + Redes Sociais -->
-        <section id="localizacao">
+        <section id="sec-localizacao">
             <div id="localizacao-grid">
 
                 <!-- Coluna Esquerda: Localização + Redes Sociais -->
@@ -205,20 +205,20 @@
                     </div>
 
                     <!-- Redes Sociais -->
-                    <div id="redes-sociais">
+                    <div id="redes">
                         <h2>Nossas Redes Sociais</h2>
                         <div id="redes-grid">
-                            <a href="https://www.instagram.com/instagram/" class="rede-item" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.instagram.com/instagram/" class="redes-item" target="_blank" rel="noopener noreferrer">
                                 <img src="images/geral/icone-instagram.png" alt="Ícone Instagram">
                                 <p>@atelie.buritis</p>
                             </a>
 
-                            <a href="https://www.facebook.com/facebookBrasil" class="rede-item" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.facebook.com/facebookBrasil" class="redes-item" target="_blank" rel="noopener noreferrer">
                                 <img src="images/geral/icone-facebook.png" alt="Ícone Facebook">
                                 <p>@atelie.buritis</p>
                             </a>
 
-                            <a href="https://www.tiktok.com/@tiktok?lang=pt-BR" class="rede-item" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.tiktok.com/@tiktok?lang=pt-BR" class="redes-item" target="_blank" rel="noopener noreferrer">
                                 <img src="images/geral/icone-tiktok.png" alt="Ícone Tiktok">
                                 <p>@atelie.buritis</p>
                             </a>
