@@ -31,7 +31,7 @@
         BACKGROUND AND BORDER - COLOR:   
        ------------------------------ */
     
-    /*nav span, h1, h2, header img, iframe video, .preços*/
+    /*nav span, h1, h2, header img, iframe video, .preços, .contato-item (border), .redes-item (border)*/
     --cor-principal: #d4557f;
 
     /*body*/
@@ -52,7 +52,7 @@
     /*.whatsapp*/
     --cor-fundo-whatsapp: #25D366;
 
-    /*border (.procedimento, #horarios, #contato, #redes, .contato-item, .redes-item, .avaliacao)*/
+    /*border (.procedimento, #horarios, #contato, #redes, .avaliacao)*/
     --cor-borda: #f2c1b6;
 
     /* ------------------------------ 
@@ -117,10 +117,10 @@
     --raio-borda-m: 15px;
 
     /*#sec-procedimentos*/
-    --raio-borda-g-top: 25px;
+    --raio-borda-g-top: 25px 25px 0px 0px;
 
     /*#sec-avaliacoes*/
-    --raio-borda-g-bottom: 25px;
+    --raio-borda-g-bottom: 0px 0px 25px 25px;
 }
 
 /* ============================== 
@@ -257,21 +257,22 @@ nav a {
 nav span {
     color: var(--cor-principal);
     font-family: var(--fonte-arte);
-    font-size: 1.1rem;
+    font-weight: bold;
+    font-size: 1.35rem;
     padding: 0.9rem 0.1rem;
 }
 
 .nav-link {
-    transition: color 0.2s;
+    transition: color 0.2s, transform 0.2s;
     text-transform: uppercase;
 }
 
-.link-nav:hover {
+.nav-link:hover {
     color: var(--cor-hover);
     transform: scale(1.03);
 }
 
-.link-nav:active {
+.nav-link:active {
     color: var(--cor-active);
 }
 
@@ -313,7 +314,7 @@ header img {
     background-color: var(--cor-principal);
 }
 
-.whatsapp-header {
+#whatsapp-header {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -331,12 +332,12 @@ header img {
     margin: 3.75rem auto 1.25rem auto
 }
 
-.whatsapp-header:hover {
+#whatsapp-header:hover {
     transform: scale(1.02);
     box-shadow: var(--sombra-whatsapp-hover);
 }
 
-.whatsapp-header img {
+#whatsapp-header img {
     width: 20px;
     height: 20px;
     border-radius: 0;
@@ -387,3 +388,385 @@ section {
 /* =============================================
    PROCEDIMENTOS:
    ============================================= */
+
+   
+#sec-procedimentos {
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: var(--raio-borda-g-top);
+    background-color: var(--cor-fundo-alternativo);
+}
+ 
+#procedimentos-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+ 
+#procedimentos-box > h2 {
+    margin-bottom: 2.5rem;
+}
+ 
+#procedimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+ 
+.procedimento {
+    background-color: var(--cor-fundo-div);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda-m);
+    overflow: hidden;
+    box-shadow: var(--sombra-geral);
+    display: flex;
+    flex-direction: column;
+}
+ 
+.procedimento img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+ 
+.procedimento-conteudo {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.procedimento .preco {
+    color: var(--cor-principal);
+    text-align: right;
+}
+
+/* =============================================
+   LOCALIZAÇÃO + HORÁRIOS + CONTATOS + REDES:
+   ============================================= */
+
+#sec-localizacao {
+    background-color: var(--cor-fundo-primario);
+    padding: 5rem 3rem;
+    max-width: 1100px;
+    margin: 0 auto 80px auto;
+}
+
+#localizacao-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 62fr 38fr;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+/* -------------------------------------- 
+   COLUNA ESQUERDA: Localização + Redes   
+   -------------------------------------- */
+
+#coluna-esquerda {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+#endereco p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+ 
+#endereco iframe {
+    width: 100%;
+    height: 340px;
+    border: none;
+    border-radius: var(--raio-borda-m);
+    box-shadow: var(--sombra-conteudo);
+    display: block;
+}
+
+#redes {
+    flex: 1;
+    background-color: var(--cor-fundo-div);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda-m);
+    padding: 1.5rem;
+    box-shadow: var(--sombra-conteudo);
+}
+
+#redes h2 {
+    margin-bottom: 1rem;
+}
+
+#redes-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+}
+
+#redes-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    padding: 0.65rem 0.7rem;
+    border-radius: var(--raio-borda-p);
+    border: 1px solid var(--cor-principal);
+    background-color: var(--cor-fundo-primario);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+ 
+#redes-item:hover {
+    background-color: transparent;
+    border-color: var(--cor-principal);
+    box-shadow: var(--sombra-hover);
+    transform: scale(1.02);
+}
+ 
+#redes-item img {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+ 
+#redes-item p {
+    margin: 0;
+    color: var(--cor-texto-suave);
+    font-size: 0.88rem;
+    transition: transform 0.2s;
+}
+
+#redes-item p:active {
+    color: var(--cor-texto-forte);
+}
+
+/* -------------------------------------- 
+   COLUNA DIREITA: Horários + Contato   
+   -------------------------------------- */
+
+#coluna-direita {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#horarios {
+    background-color: var(--cor-fundo-div);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda-m);
+    padding: 1.75rem;
+    box-shadow: var(--sombra-conteudo);
+}
+ 
+#horarios h2 {
+    margin-bottom: 1.25rem;
+}
+ 
+#horarios h3 {
+    color: var(--cor-texto-suave);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.2rem;
+    margin-top: 1.2rem;
+}
+ 
+#horarios h3:first-of-type {
+    margin-top: 0;
+}
+ 
+#horarios p {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--cor-texto-forte);
+}
+
+#contato {
+    background-color: var(--cor-fundo-div);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda-m);
+    padding: 1.75rem;
+    box-shadow: var(--sombra-conteudo);
+    flex: 1;
+}
+
+#contato h2 {
+    margin-bottom: 2rem;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 18px;
+    padding: 0.7rem 1rem;
+    border-radius: var(--raio-borda-p);
+    border: 1px solid var(--cor-principal);
+    background-color: var(--cor-fundo-primario);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+ 
+.contato-item:hover {
+    background-color: transparent;
+    border-color: var(--cor-principal);
+    box-shadow: var(--sombra-hover);
+    transform: scale(1.02);
+}
+ 
+.contato-item img {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+ 
+.contato-item p {
+    margin: 0;
+    color: var(--cor-texto-suave);
+    font-size: 0.9rem;
+    transition: transform 0.2s;
+}
+
+.contato-item p:active {
+    color: var(--cor-texto-forte);
+}
+
+button.contato-item {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    cursor: pointer;
+    padding: 0.7rem 1rem;
+    border-radius: var(--raio);
+    border: 1px solid var(--cor-principal);
+    background-color: var(--cor-fundo-primario);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    box-sizing: border-box;
+}
+
+button.contato-item:hover {
+    border-color: transparent;
+    box-shadow: var(--sombra-hover);
+    transform: scale(1.02);
+}
+
+.contato-item:last-of-type {
+    margin-top: 18px;
+}
+
+/* =============================================
+   AVALIACOES:
+   ============================================= */
+
+
+
+/* =============================================
+   FOOTER:
+   ============================================= */
+
+footer {
+    background-color: var(--cor-fundo-primario);
+    color: var(--cor-texto-suave);
+    text-align: center;
+    padding: 2.5rem 2rem;
+    font-size: 0.875rem;
+    line-height: 1.8;
+    border-top: 1px solid var(--cor-texto-suave);
+}
+ 
+footer p {
+    margin: 0;
+}
+
+/* =============================================
+   RESPONSIVIDADE:
+   ============================================= */
+
+@media (max-width: 768px) {
+    nav {
+        justify-content: center;
+        padding: 0.8rem 1.25rem;
+        gap: 1rem;
+        overflow-x: auto;
+    }
+ 
+    .nav-link {
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    h1 {
+        margin-top: 1.75rem;
+
+    }
+
+    #header-whatsapp {
+        display: none;
+    }
+
+    #historia {
+        display: none;
+    }
+ 
+    section {
+        padding: 3.5rem 1.25rem;
+    }
+ 
+    #procedimentos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #localizacao {
+        padding: 3.5rem 1.25rem;
+    }
+ 
+    #localizacao-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto; 
+    }
+
+    #coluna-esquerda, #coluna-direita {
+        display: contents;
+    }
+
+    #endereco {
+        order: 1;
+    }
+
+    #horarios {
+        order: 2;
+    }
+
+    #contato {
+        order: 3;
+    }
+
+    #redes {
+        order: 4;
+    }
+ 
+    #endereco iframe {
+        height: 260px;
+    }
+
+    #redes-grid {
+        flex-direction: row;
+    }
+ 
+    #contato-box {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 420px) {
+    #redes-grid {
+        grid-template-columns: 1fr;
+    }
+}
