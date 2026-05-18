@@ -31,29 +31,35 @@
         BACKGROUND AND BORDER - COLOR:   
        ------------------------------ */
     
-    /*nav span, h1, h2, header img, iframe video, .preços, .contato-item (border), .redes-item (border)*/
-    --cor-principal: #d4557f;
+    /*nav span, h1, h2, header img, iframe video, .contato-item (border), .redes-item (border)*/
+    --cor-principal: #C94F6C;
 
     /*body*/
-    --cor-fundo-site: #faf7f5;
+    --cor-fundo-site: #fdfaf5;
 
-    /*nav, footer, #sec-localizacao, .contato-item, .rede-item*/
+    /*nav, footer*/
+    --cor-nav-footer: #f1dcdc;
+
+    /*#sec-localizacao*/
     --cor-fundo-primario: #f2e9e8;
 
     /*#sec-procedimentos, #sec-avaliacoes*/
     --cor-fundo-alternativo: #f4ede8;
 
     /*.procedimento, #horarios, #contato, #redes, .avaliacao*/
-    --cor-fundo-div: #fdfaf5;
+    --cor-fundo-div: #fff;
 
-    /*.contato-item:hover, .redes-item:hover*/
-    --cor-div-hover: #f2e9e83f;
+    /*.contato-item, .redes-item:*/
+    --cor-fundo-item: #f2e9e855;
 
     /*.whatsapp*/
     --cor-fundo-whatsapp: #25D366;
 
     /*border (.procedimento, #horarios, #contato, #redes, .avaliacao)*/
-    --cor-borda: #f2c1b6;
+    --cor-borda: #d4c1c1;
+
+    /*.preco*/
+    --cor-preco: #c94a68;
 
     /* ------------------------------ 
         TEXT - COLOR:   
@@ -92,19 +98,22 @@
        ------------------------------ */
 
     /*nav, #sec-procedimentos, #sec-localizacao, #sec-avaliacoes, footer*/
-    --sombra-geral: 0 2px 16px rgba(44, 36, 22, 0.08);
+    --sombra-geral: 2px 2px 16px rgba(44, 36, 22, 0.06);
+
+    /*footer*/
+    --sombra-footer: 2px -2px 16px rgba(44, 36, 22, 0.06);
 
     /*iframe, .procedimento, #redes, #horarios, #contato*/
-    --sombra-conteudo: 0 2px 16px rgba(44, 36, 22, 0.08);
+    --sombra-conteudo: 2px 2px 16px rgba(44, 36, 22, 0.08);
 
     /*.contato-item:hover, .rede-item:hover*/
-    --sombra-hover: 0 2px 10px rgba(139, 111, 71, 0.12);
+    --sombra-hover: 3px 2px 10px rgba(139, 111, 71, 0.12);
 
     /*.whatsapp*/
-    --sombra-whatsapp: 0 4px 20px rgba(13, 212, 86, 0.35);
+    --sombra-whatsapp: 2px 4px 20px rgba(13, 212, 86, 0.35);
 
     /*.whatsapp:hover*/
-    --sombra-whatsapp-hover: 0 6px 24px rgba(37, 211, 102, 0.45);
+    --sombra-whatsapp-hover: 3px 6px 24px rgba(37, 211, 102, 0.45);
 
     /* ------------------------------ 
         RAIO BORDAS:   
@@ -157,12 +166,12 @@ a {
 }
 
 h1, h2, h3 {
+    font-family: var(--fonte-titulo);
     line-height: 1.25;
 }
 
 h1, h2 {
     color: var(--cor-principal);
-    font-family: var(--fonte-titulo);
 }
 
 h1 {
@@ -182,7 +191,6 @@ h2 {
 
 h3 {
     color: var(--cor-texto-forte);
-    font-family: var(--fonte-texto);
     font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
@@ -242,9 +250,9 @@ nav {
     align-items: center;
     gap: 2rem;
     padding: 0rem 3rem;
-    background-color: var(--cor-fundo-primario);
+    background-color: var(--cor-nav-footer);
     backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--cor-texto-suave);
+    box-shadow: var(--sombra-geral);
 }
 
 nav a {
@@ -288,9 +296,9 @@ header {
     justify-content: center;
     text-align: center;
     padding: 6rem 2rem 1rem 3rem;
-    background-image:
+    /*background-image:
         radial-gradient(ellipse at 20% 50%, rgba(139, 111, 71, 0.25) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(139, 111, 71, 0.15) 0%, transparent 50%); 
+        radial-gradient(ellipse at 80% 20%, rgba(139, 111, 71, 0.15) 0%, transparent 50%); */
     position: relative;
     overflow: hidden;
 }
@@ -388,7 +396,6 @@ section {
 /* =============================================
    PROCEDIMENTOS:
    ============================================= */
-
    
 #sec-procedimentos {
     max-width: 1100px;
@@ -425,7 +432,7 @@ section {
  
 .procedimento img {
     width: 100%;
-    height: 400px;
+    height: 300px;
     object-fit: cover;
 }
  
@@ -438,7 +445,9 @@ section {
 }
 
 .procedimento .preco {
-    color: var(--cor-principal);
+    /*color: var(--cor-principal);
+    */color: var(--cor-preco);
+    font-weight: 700;
     text-align: right;
 }
 
@@ -497,7 +506,7 @@ section {
 }
 
 #redes h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 #redes-grid {
@@ -506,7 +515,7 @@ section {
     gap: 0.75rem;
 }
 
-#redes-item {
+.redes-item {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -516,32 +525,32 @@ section {
     padding: 0.65rem 0.7rem;
     border-radius: var(--raio-borda-p);
     border: 1px solid var(--cor-principal);
-    background-color: var(--cor-fundo-primario);
+    background-color: var(--cor-fundo-item);
     transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
  
-#redes-item:hover {
+.redes-item:hover {
     background-color: transparent;
     border-color: var(--cor-principal);
     box-shadow: var(--sombra-hover);
     transform: scale(1.02);
 }
  
-#redes-item img {
+.redes-item img {
     width: 22px;
     height: 22px;
     flex-shrink: 0;
 }
  
-#redes-item p {
+.redes-item p {
     margin: 0;
     color: var(--cor-texto-suave);
     font-size: 0.88rem;
     transition: transform 0.2s;
 }
 
-#redes-item p:active {
-    color: var(--cor-texto-forte);
+.redes-item p:hover {
+    color: var(--cor-active);
 }
 
 /* -------------------------------------- 
@@ -568,6 +577,7 @@ section {
  
 #horarios h3 {
     color: var(--cor-texto-suave);
+    font-family: var(--fonte-texto);
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -606,7 +616,7 @@ section {
     padding: 0.7rem 1rem;
     border-radius: var(--raio-borda-p);
     border: 1px solid var(--cor-principal);
-    background-color: var(--cor-fundo-primario);
+    background-color: var(--cor-fundo-item);
     transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
  
@@ -630,8 +640,8 @@ section {
     transition: transform 0.2s;
 }
 
-.contato-item p:active {
-    color: var(--cor-texto-forte);
+.contato-item p:hover {
+    color: var(--cor-active);
 }
 
 button.contato-item {
@@ -642,15 +652,16 @@ button.contato-item {
     width: 100%;
     cursor: pointer;
     padding: 0.7rem 1rem;
-    border-radius: var(--raio);
+    border-radius: var(--raio-borda-p);
     border: 1px solid var(--cor-principal);
-    background-color: var(--cor-fundo-primario);
+    background-color: var(--cor-fundo-item);
     transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
     box-sizing: border-box;
 }
 
 button.contato-item:hover {
-    border-color: transparent;
+    background-color: transparent;
+    border: 1px solid var(--cor-principal);
     box-shadow: var(--sombra-hover);
     transform: scale(1.02);
 }
@@ -670,13 +681,14 @@ button.contato-item:hover {
    ============================================= */
 
 footer {
-    background-color: var(--cor-fundo-primario);
+    max-height: 200px;
+    background-color: var(--cor-nav-footer);
     color: var(--cor-texto-suave);
     text-align: center;
-    padding: 2.5rem 2rem;
-    font-size: 0.875rem;
+    padding: 1.5rem 1rem;
+    font-size: 0.7rem;
     line-height: 1.8;
-    border-top: 1px solid var(--cor-texto-suave);
+    box-shadow: var(--sombra-footer);
 }
  
 footer p {
